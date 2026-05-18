@@ -24,17 +24,13 @@ async function Log(stack, level, pkg, message) {
             }
         );
 
-        console.log("SUCCESS:", response.data);
-
         return response.data;
 
     } catch (error) {
 
-        console.log("STATUS:", error.response?.status);
-
-        console.log("DATA:", error.response?.data);
-
-        console.log("ERROR:", error.message);
+        console.error(
+            error.response?.data || error.message
+        );
     }
 }
 
